@@ -1,0 +1,233 @@
+:root {
+    --primary-color: #4361ee;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+    --background-color: #f5f7fa;
+    --card-background: #ffffff;
+    --hint-color: #666;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 2rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.card {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    margin-bottom: 1.5rem;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.help-text {
+    color: var(--hint-color);
+    font-size: 0.875rem;
+}
+
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    background-color: #f8fafc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+input:hover, select:hover {
+    border-color: #cbd5e1;
+    background-color: #ffffff;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.input-with-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input-with-actions input {
+    flex: 1;
+}
+
+.icon-button {
+    padding: 0.625rem;
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--hint-color);
+}
+
+.icon-button:hover {
+    background-color: var(--background-color);
+}
+
+.field-hint {
+    font-size: 0.75rem;
+    color: var(--hint-color);
+    margin-top: 0.25rem;
+}
+
+.date-group {
+    margin-bottom: 1.25rem;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.date-inputs input {
+    width: 6rem;
+}
+
+.primary-button {
+    width: 100%;
+    padding: 0.875rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+    background-color: #3651d4;
+}
+
+.secondary-button {
+    padding: 0.625rem 1rem;
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.secondary-button:hover {
+    background-color: var(--background-color);
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#citationOutput {
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 4px;
+    margin: 1rem 0;
+    font-family: 'Inter', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .date-inputs {
+        flex-wrap: wrap;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
+
+#publicationFields {
+    display: flex;
+    flex-direction: column;
+}
+
+#publicationFields .input-group:last-child {
+    margin-bottom: 0;
+}
+
+#publicationFields input,
+#publicationFields select {
+    margin-bottom: 0;
+}
+
+/* Add styles for required fields */
+input:required, select:required {
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Style for required field labels */
+label.required::after {
+    content: " *";
+    color: var(--primary-color);
+    font-size: 0.875rem;
+} 

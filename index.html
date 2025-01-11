@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Citation Generator</h1>
+        
+        <form id="citationForm">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Contributors</h2>
+                    <div class="help-text">Add the authors of the work you're citing</div>
+                </div>
+                <div class="input-group">
+                    <label for="authors" class="required">Author Name(s)</label>
+                    <div class="input-with-actions">
+                        <input type="text" id="authors" required>
+                        <button type="button" class="icon-button" title="Reset"><i class="fas fa-undo"></i></button>
+                    </div>
+                    <div class="field-hint">Separate multiple authors with semicolons</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Source Details</h2>
+                    <div class="help-text">Provide information about the source</div>
+                </div>
+                <div class="input-group">
+                    <label for="citationType" class="required">Type of Material</label>
+                    <select id="citationType" required>
+                        <option value="">Select type...</option>
+                        <option value="journal">Journal Article</option>
+                        <option value="book">Book</option>
+                        <option value="bookChapter">Book Chapter</option>
+                        <option value="website">Website</option>
+                        <option value="conference">Conference Paper</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="title" class="required">Title</label>
+                    <input type="text" id="title" required>
+                </div>
+
+                <div class="date-group">
+                    <label class="required">Publication Date</label>
+                    <div class="date-inputs">
+                        <input type="text" id="year" placeholder="YYYY" maxlength="4" required>
+                        <input type="text" id="month" placeholder="MM" maxlength="2">
+                        <input type="text" id="day" placeholder="DD" maxlength="2">
+                    </div>
+                </div>
+
+                <div id="publicationFields">
+                    <!-- Dynamic fields will be inserted here -->
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h2>Citation Style</h2>
+                </div>
+                <div class="input-group">
+                    <label for="citationStyle" class="required">Citation Style</label>
+                    <select id="citationStyle" required>
+                        <option value="">Select style...</option>
+                        <option value="apa">APA</option>
+                        <option value="mla">MLA</option>
+                        <option value="chicago">Chicago</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="primary-button">Generate Citation</button>
+        </form>
+
+        <div id="result" class="card hidden">
+            <div class="card-header">
+                <h2>Generated Citation</h2>
+            </div>
+            <p id="citationOutput"></p>
+            <div class="button-group">
+                <button id="copyButton" class="secondary-button"><i class="fas fa-copy"></i> Copy</button>
+                <button id="newCitationButton" class="secondary-button"><i class="fas fa-plus"></i> New Citation</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
